@@ -232,6 +232,7 @@ h3 {
 .team-band,
 .join-band,
 .values,
+.awareness-band,
 .roadmap-band,
 .drives-band,
 .partners-band {
@@ -256,6 +257,10 @@ h3 {
 
 .values {
   background: var(--white);
+}
+
+.awareness-band {
+  background: #e9f7fb;
 }
 
 .values-grid,
