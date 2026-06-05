@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">GACHA logo</title>
+  <desc id="desc">A light blue globe with an orbit ring, star accents, and the GACHA wordmark.</desc>
+  <defs>
+    <style>
+      .line{fill:none;stroke:#4fc3ee;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+      .thin{fill:none;stroke:#4fc3ee;stroke-width:2.8;stroke-linecap:round;opacity:.9}
+      .word{fill:#34b8ea;font-family:Arial Black,Arial,sans-serif;font-weight:900}
+      .small{fill:#34b8ea;font-family:Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:2px}
+    </style>
+  </defs>
+  <rect width="720" height="420" fill="#fff"/>
+  <g transform="translate(360 204)">
+    <ellipse class="line" rx="210" ry="42" transform="rotate(-2)"/>
+    <circle class="thin" r="142"/>
+    <ellipse class="thin" rx="44" ry="142"/>
+    <ellipse class="thin" rx="82" ry="142"/>
+    <ellipse class="thin" rx="118" ry="142"/>
+    <path class="thin" d="M-126-72c74 22 178 22 252 0M-140-28c84 18 196 18 280 0M-140 28c84-18 196-18 280 0M-126 72c74-22 178-22 252 0"/>
+    <path class="thin" d="M-142 0h284M0-142v284"/>
+    <ellipse class="line" rx="58" ry="21" cy="137"/>
+  </g>
+  <text class="word" x="360" y="213" text-anchor="middle" font-size="72" transform="rotate(-4 360 213)">GACHA</text>
+  <path id="arc" d="M244 292c38 38 184 38 222 0" fill="none"/>
+  <text class="small" font-size="20">
+    <textPath href="#arc" startOffset="50%" text-anchor="middle">AFRICA CHILD HOPE ASSOCIATION</textPath>
+  </text>
+  <g fill="#34b8ea">
+    <path d="M115 173c21-7 33-19 40-40 7 21 19 33 40 40-21 7-33 19-40 40-7-21-19-33-40-40Z"/>
+    <path d="M92 224c13-4 21-12 25-25 4 13 12 21 25 25-13 4-21 12-25 25-4-13-12-21-25-25Z"/>
+    <path d="M526 72c17-6 27-16 33-33 6 17 16 27 33 33-17 6-27 16-33 33-6-17-16-27-33-33Z"/>
+    <path d="M589 126c10-3 16-9 19-19 3 10 9 16 19 19-10 3-16 9-19 19-3-10-9-16-19-19Z"/>
+  </g>
+</svg>
