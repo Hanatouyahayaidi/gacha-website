@@ -2,7 +2,7 @@ const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const canvas = document.querySelector("[data-hero-canvas]");
-const ctx = canvas.getContext("2d");
+const ctx = canvas ? canvas.getContext("2d") : null;
 
 const palette = ["#8f1d2c", "#d6a637", "#167579", "#4f7f47", "#f2eee6"];
 let shapes = [];
@@ -21,6 +21,10 @@ function setMenu(open) {
 }
 
 function resizeCanvas() {
+  if (!canvas || !ctx) {
+    return;
+  }
+
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
   width = canvas.offsetWidth;
   height = canvas.offsetHeight;
@@ -40,6 +44,10 @@ function resizeCanvas() {
 }
 
 function drawBackdrop(time = 0) {
+  if (!canvas || !ctx) {
+    return;
+  }
+
   ctx.clearRect(0, 0, width, height);
 
   const gradient = ctx.createLinearGradient(0, 0, width, height);
@@ -94,25 +102,29 @@ function drawBackdrop(time = 0) {
   }
 }
 
-menuToggle.addEventListener("click", () => {
-  setMenu(!nav.classList.contains("is-open"));
-});
+if (menuToggle && nav) {
+  menuToggle.addEventListener("click", () => {
+    setMenu(!nav.classList.contains("is-open"));
+  });
 
-nav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    setMenu(false);
-  }
-});
+  nav.addEventListener("click", (event) => {
+    if (event.target.matches("a")) {
+      setMenu(false);
+    }
+  });
+}
 
-document.querySelector(".join-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const button = form.querySelector("button");
-  button.textContent = "Thanks!";
-  form.reset();
-  window.setTimeout(() => {
-    button.textContent = "Send interest";
-  }, 1800);
+document.querySelectorAll("form[data-confirm]").forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const button = form.querySelector("button");
+    const originalText = button.textContent;
+    button.textContent = "Thanks!";
+    form.reset();
+    window.setTimeout(() => {
+      button.textContent = originalText;
+    }, 1800);
+  });
 });
 
 window.addEventListener("scroll", setHeaderState, { passive: true });
